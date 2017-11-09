@@ -28,7 +28,7 @@ ng.module('smart-table')
 					var end;
 					var i;
 					var prevPage = scope.currentPage;
-					scope.jumpPage = 1;
+					scope.jumpPage = scope.currentPage;
 					scope.totalItemCount = paginationState.totalItemCount;
 					scope.currentPage = Math.floor(paginationState.start / paginationState.number) + 1;
 
