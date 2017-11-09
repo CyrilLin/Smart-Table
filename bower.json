@@ -1,7 +1,7 @@
 {
-  "name": "angular-smart-table",
+  "name": "MrHuangJser-fork-smart-table",
   "description": "smart-table-fork",
-  "main": "index.js",
+  "main": "./dist/smart-table.min.js",
   "authors": [
     "Laurent Renard"
   ],
