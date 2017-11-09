@@ -1,0 +1,17 @@
+{
+  "name": "angular-smart-table",
+  "description": "smart-table-fork",
+  "main": "index.js",
+  "authors": [
+    "Laurent Renard"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/MrHuangJser/Smart-Table",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
