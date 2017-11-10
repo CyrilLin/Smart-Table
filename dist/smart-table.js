@@ -18,7 +18,12 @@ ng.module('smart-table', []).run(['$templateCache', function ($templateCache) {
 		'    border: 1px solid #d6d6d6;\n' +
 		'    border-radius: 5px;\n' +
 		'    margin-right: 10px;" ng-click="selectPage(numPages)">尾页</a>' +
-		'<input type="number" ng-model="jumpPage" style="display: inline-block;width: 2rem;"><a style="margin-right: 10px;" ng-click="selectPage(jumpPage)">跳转</a>' +
+		'<input type="text" ng-model="jumpPage" style="display: inline-block;\n' +
+		'    width: 5rem;\n' +
+		'    border: 1px solid rgb(214, 214, 214);\n' +
+		'    border-radius: 5px;\n' +
+		'    text-align: center;\n' +
+		'    padding: 6px 12px;"><a style="margin-right: 10px;margin-left: 5px;cursor: pointer;" ng-click="selectPage(jumpPage)">跳转</a>' +
 		'<span>共{{numPages}}页</span>' +
 		'</span>' +
 		'</nav>'
@@ -481,7 +486,6 @@ ng.module('smart-table')
 					var end;
 					var i;
 					var prevPage = scope.currentPage;
-					scope.jumpPage = scope.currentPage;
 					scope.totalItemCount = paginationState.totalItemCount;
 					scope.currentPage = Math.floor(paginationState.start / paginationState.number) + 1;
 
@@ -523,6 +527,7 @@ ng.module('smart-table')
 				scope.selectPage = function (page) {
 					if (page > 0 && page <= scope.numPages) {
 						ctrl.slice((page - 1) * scope.stItemsByPage, scope.stItemsByPage);
+						scope.jumpPage = page;
 					}
 				};
 
