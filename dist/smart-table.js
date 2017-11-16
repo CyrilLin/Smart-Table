@@ -3,7 +3,7 @@
 
 ng.module('smart-table', []).run(['$templateCache', function ($templateCache) {
 	$templateCache.put('template/smart-table/pagination.html',
-		'<nav aria-label="..." class="clearfix">' +
+		'<nav ng-if="numPages && pages.length >= 2" aria-label="..." class="clearfix">' +
 		'<a style="    padding: 6px 12px;\n' +
 		'    border: 1px solid #d6d6d6;\n' +
 		'    border-radius: 5px;\n' +
@@ -25,6 +25,7 @@ ng.module('smart-table', []).run(['$templateCache', function ($templateCache) {
 		'    text-align: center;\n' +
 		'    padding: 6px 12px;"><a style="margin-right: 10px;margin-left: 5px;cursor: pointer;" ng-click="selectPage(jumpPage)">跳转</a>' +
 		'<span>共{{numPages}}页</span>' +
+		'<span style="margin-left: 10px">{{stItemsByPage*currentPage||0}}/{{stItemsByPage*numPages}}条</span>' +
 		'</span>' +
 		'</nav>'
 	);
