@@ -25,7 +25,7 @@ ng.module('smart-table', []).run(['$templateCache', function ($templateCache) {
 		'    text-align: center;\n' +
 		'    padding: 6px 12px;"><a style="margin-right: 10px;margin-left: 5px;cursor: pointer;" ng-click="selectPage(jumpPage)">跳转</a>' +
 		'<span>共{{numPages}}页</span>' +
-		'<span style="margin-left: 10px">{{stItemsByPage*currentPage||0}}/{{stItemsByPage*numPages}}条</span>' +
+		'<span style="margin-left: 10px">{{numberOfElements}}/{{totalItemCount}}条</span>' +
 		'</span>' +
 		'</nav>'
 	);
@@ -488,6 +488,7 @@ ng.module('smart-table')
 					var i;
 					var prevPage = scope.currentPage;
 					scope.totalItemCount = paginationState.totalItemCount;
+					scope.numberOfElements = paginationState.numberOfElements;
 					scope.currentPage = Math.floor(paginationState.start / paginationState.number) + 1;
 
 					start = Math.max(start, scope.currentPage - Math.abs(Math.floor(scope.stDisplayedPages / 2)));

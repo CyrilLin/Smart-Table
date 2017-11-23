@@ -22,7 +22,7 @@ ng.module('smart-table', []).run(['$templateCache', function ($templateCache) {
 		'    text-align: center;\n' +
 		'    padding: 6px 12px;"><a style="margin-right: 10px;margin-left: 5px;cursor: pointer;" ng-click="selectPage(jumpPage)">跳转</a>' +
 		'<span>共{{numPages}}页</span>' +
-		'<span style="margin-left: 10px">{{stItemsByPage*currentPage||0}}/{{stItemsByPage*numPages}}条</span>' +
+		'<span style="margin-left: 10px">{{numberOfElements}}/{{totalItemCount}}条</span>' +
 		'</span>' +
 		'</nav>'
 	);
